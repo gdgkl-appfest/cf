@@ -21,7 +21,9 @@ const os = require('os');
 const fs = require('fs');
 
 //const UUID = require("uuid-v4");
-const gcs = require('@google-cloud/storage')({keyFilename: 'serviceAccountKey.json'});
+const gcs = require('@google-cloud/storage')(functions.config().firebase);
+
+//const gcs = require('@google-cloud/storage')({keyFilename: 'serviceAccountKey.json'});
 
 // Blurs uploaded images that are flagged as Adult or Violence.
 //gs://friendlypixdemo-b15e3.appspot.com/s7xtt969O3VSS3aod0FBLF09EPw2/thumb/1507479119070
